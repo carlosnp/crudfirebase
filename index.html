@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Scripts de Firebase y firestore -->
+    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-firestore.js"></script>
+    <link rel="stylesheet" href="styles.css">
+
+    <title>Tutorial Firebase</title>
+</head>
+<body>
+    <h1>Cafe con Dolares</h1>
+
+    <div class="content">
+
+        <form id="add-cafe-form">
+            <input type="text" name="name" placeholder="Nombre del Cafe">
+            <input type="text" name="city" placeholder="Ciudad del cafe">
+            <button id="btn-cafe">Nuevo Cafe</button>
+        </form>
+
+        <ul id="cafe-list"></ul>
+
+    </div>
+    
+    <!-- Firebase config -->
+    <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyCMEk-RWWzo9EWWXX6-NlhUhVmipAbqfY4",
+        authDomain: "firetuto-cf1c6.firebaseapp.com",
+        databaseURL: "https://firetuto-cf1c6.firebaseio.com",
+        projectId: "firetuto-cf1c6",
+        storageBucket: "firetuto-cf1c6.appspot.com",
+        messagingSenderId: "928092210283"
+    };
+    firebase.initializeApp(config);
+    // constante que almacena la base de datos
+    const db = firebase.firestore(); 
+    db.settings({ timestampsInSnapshots: true });  
+    </script>
+    
+    <!-- APP -->
+    <script src="app.js"></script>
+</body>
+</html>
