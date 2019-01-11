@@ -99,7 +99,8 @@ db.collection('cafe').orderBy('city').onSnapshot(snapshot => {
             let li = cafeList.querySelector('[data-id=' + change.doc.id + ']');
             cafeList.removeChild(li);
         } else if (change.type == 'modified') {
-            let li = cafeList.querySelector('[data-id=' + change.doc.id + ']')
+            let li = cafeList.querySelector('[data-id=' + change.doc.id + ']');
+            cafeList.removeChild(li);
             renderCafe(change.doc);
         }
     });
